@@ -1,0 +1,34 @@
+name: edgar
+on:
+  schedule:
+    - cron: "0 0,12 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - id: x
+        run: python scripts/edgar_pdd.py check
+        continue-on-error: true
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      - name: Publish when validation passed
+        if: steps.x.outcome == 'success'
+        run: |
+          git config user.name "tracker-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data && (git diff --cached --quiet || git commit -m "edgar: new PDD quarter" && git push)
+      - name: Open PR when validation failed
+        if: steps.x.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: edgar-needs-review
+          title: "季报抽取未通过校验，请人工确认"
+          body-path: data/pdd/extract_report.txt
+          add-paths: data/pdd/pending

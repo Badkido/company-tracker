@@ -1,0 +1,2 @@
+[{ "id": "pdd", "name": "拼多多", "ticker": "PDD", "exchange": "NASDAQ", "currency_report": "CNY", "currency_quote": "USD",
+   "source": "sec", "cik": "0001737806", "adapter": "edgar_pdd", "enabled": true }]

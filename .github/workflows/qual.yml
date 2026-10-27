@@ -1,0 +1,26 @@
+name: qual
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - run: python scripts/qual_draft.py weekly
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Open PR if there is anything to review
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: qual-draft
+          title: "PDD 本周新闻与事件（Claude 起草，待审核）"
+          body-path: data/pdd/pr_body.md
+          add-paths: data/pdd/log.json

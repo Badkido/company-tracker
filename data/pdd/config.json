@@ -1,0 +1,33 @@
+{
+  "tax_rate": 0.27,
+  "eps26e_rmb": 64.64,
+  "net_cash_formula": "(cash_sti + lt_inv − debt) ÷ fx ÷ 1000；不含受限资金。lt_inv = 长期投资/非流动定期存款（资产负债表）。缺任一输入时保留手工值。",
+  "net_cash_auto": true,
+  "market_view": "增长明显放缓，现金流充沛却不分红、不回购，估值因此明显折价；监管风险和新投入的回报不确定，进一步压低了估值。",
+  "ads_per_share": 4,
+  "price_ticker": "PDD",
+  "fx_ticker": "CNY=X",
+  "thirteenf": {
+    "_note": "CIK/CUSIP 已在 EDGAR 13F 原文核实（2026-10-27）。",
+    "pdd_cusip": "722304102",
+    "investors": [
+      {
+        "name": "Himalaya Capital",
+        "cik": "0001709323",
+        "alias": "李录"
+      },
+      {
+        "name": "H&H International",
+        "cik": "0001759760",
+        "alias": "段永平"
+      }
+    ]
+  },
+  "qual": {
+    "model": "claude-sonnet-5-5",
+    "prompt_version": "v1"
+  },
+  "seed_authoritative": [
+    "25Q4"
+  ]
+}

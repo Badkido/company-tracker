@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>公司追踪看板</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div class="top" id="top" role="tablist" aria-label="公司"></div>
+
+  <section class="page" id="overview" hidden>
+    <div class="card"><h3>总览（预留）</h3><p class="note">总览页待建。以后这里放各公司一行关键指标。</p></div>
+  </section>
+
+  <section class="page" id="pdd">
+    <div class="headrow"><h1>PDD · 拼多多</h1><span class="d" id="price-date">—</span></div>
+    <div class="tiles">
+      <div class="tile"><span class="lab">股价</span><span class="num" id="k-price">—</span></div>
+      <div class="tile"><span class="lab">市值（亿美元）</span><span class="num" id="k-mcap">—</span></div>
+      <div class="tile"><span class="lab">PE TTM</span><span class="num" id="k-pe">—</span></div>
+      <div class="tile"><span class="lab">PE 26E</span><span class="num" id="k-pe26">—</span></div>
+      <div class="tile"><span class="lab">EV/经营利润</span><span class="num" id="k-ev">—</span></div>
+      <div class="tile"><span class="lab">净现金/ADS</span><span class="num" id="k-cash">—</span></div>
+    </div>
+    <p class="view"><b>市场观点</b><span id="market-view"></span></p>
+
+    <div class="sub" role="tablist" aria-label="拼多多">
+      <button class="tab subtab" role="tab" data-tab="pdd-profile" aria-selected="true">公司档案</button>
+      <button class="tab subtab" role="tab" data-tab="pdd-track" aria-selected="false">判断与追踪</button>
+      <button class="tab subtab" role="tab" data-tab="pdd-change" aria-selected="false">变化与事件</button>
+    </div>
+
+    <section class="sec" id="pdd-profile">
+      <div class="card wide">
+        <h3>核心财务（滚动 4 季度）</h3>
+        <p class="note">单位：亿元人民币。灰色缩进行为比率（占收入比重或同比）。应收 = 应收支付平台款 + 关联方应收 + 预付款；应付 = 应付商家款 + 商家保证金 + 应计费用 + 预收款 + 应付关联方。数据取自季度业绩公告（SEC 6-K）。</p>
+        <div class="scroll"><table id="t-fin"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>主要股东</h3>
+        <p class="note" id="hold-note"></p>
+        <div class="scroll"><table id="t-hold"><thead><tr><th>股东</th><th>类型</th><th class="n">持股</th><th>口径</th><th>来源</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>Temu 发展历程</h3>
+        <p class="note">公司不单独披露 Temu 数据；高亮 = 上次财报后新发生。</p>
+        <div class="scroll"><table id="t-temu"><thead><tr><th>时间</th><th>事件</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>管理团队与董事会</h3>
+        <p class="note">年龄为最近一次年报披露口径。</p>
+        <div class="scroll"><table id="t-people"><thead><tr><th>姓名</th><th class="n">年龄</th><th>职位</th><th>学历</th><th>经历</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="sec" id="pdd-track" hidden>
+      <div class="card wide">
+        <h3>本季度核心指标</h3>
+        <p class="note">比较最新季度、上一季度和去年同季。增速和利润率差异超过 0.5 个百分点才标记变化；金额增至 1.5 倍以上标记为跳升。</p>
+        <div class="scroll"><table id="t-track"><thead><tr><th>指标</th><th class="n">本季</th><th class="n">上季</th><th class="n">去年同季</th><th class="n">较上季</th><th>信号</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>收入增速（同比）</h3>
+        <p class="note">广告收入主要反映国内主站；交易服务收入主要反映 Temu。</p>
+        <div class="chart" id="c-growth"></div>
+      </div>
+      <div class="card">
+        <h3>零增长估值</h3>
+        <p class="note">每 ADS 价值 =（税后经营利润 ÷ 要求回报率 + 净现金 ×（1 − 现金折扣））÷ ADS 数。利润为假设值，参考 2025 年实际约 114 亿美元。</p>
+        <div class="scroll"><table id="t-scen"><thead><tr><th>情景</th><th class="n">税后经营利润（亿美元）</th><th class="n">回报率</th><th class="n">现金折扣</th><th class="n">每ADS</th><th class="n">较现价</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>管理层问答口径</h3>
+        <p class="note">每场业绩会只保留有信息量的表态；高亮 = 最新一季。</p>
+        <div class="scroll"><table id="t-qa"><thead><tr><th>财报季</th><th>要点</th><th>补充</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="sec" id="pdd-change" hidden>
+      <div class="card">
+        <h3>市场新闻与观点变化</h3>
+        <p class="note">评级调整、重要报道和市场情绪变化；高亮 = 上次财报后新发生。</p>
+        <div class="scroll"><table id="t-view"><thead><tr><th>时间</th><th>变化</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>投资人建仓与减仓</h3>
+        <p class="note">来自 13F，季末快照，约 45 天滞后。</p>
+        <div class="scroll"><table id="t-inv"><thead><tr><th>季度</th><th>动作</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>团队变化</h3>
+        <p class="note">董事、高管任免与分工调整。</p>
+        <div class="scroll"><table id="t-team"><thead><tr><th>时间</th><th>变化</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>重大事件</h3>
+        <p class="note">战略、监管与处罚；Temu 相关事件见公司档案。</p>
+        <div class="scroll"><table id="t-event"><thead><tr><th>时间</th><th>事件</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <div class="card">
+      <h3>数据局限</h3>
+      <ul class="limits">
+        <li>GMV 不披露，不展示。</li>
+        <li>员工人数只有年度数。</li>
+        <li>无存货科目；若新拼姆自营品牌开始备货，此科目会出现——这是追踪信号之一。</li>
+        <li>Temu 无单独财务披露。</li>
+        <li>股东持股为年度快照；13F 为季末快照，约 45 天滞后。</li>
+      </ul>
+    </div>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
