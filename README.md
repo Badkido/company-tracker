@@ -30,4 +30,4 @@ python validate.py pdd
 ## 待办 / 未验证
 - `edgar_pdd.py` 只用合成的新闻稿 HTML 测过，需要用真实 6-K 跑 `backfill` 验收（SPEC 3.4、9.2）。
 - `thirteenf.py` 需先填 CIK 与 CUSIP（config.json 里为 `null`）。
-- 净现金已按 SPEC 4.1 接入（`snapshot.py`）。种子数据没有 `lt_inv`，`edgar_pdd.py backfill` 抽到后才会自动覆盖手工值 74.0；资产负债表上“长期投资”的实际科目名需用真实 6-K 核对。
+- 净现金按 SPEC 4.1 自动计算；6-K 无长期投资科目，用 config.json 的 `lt_inv_manual_rmb_mn`（46046，由原手工 74.0 倒推），每年 20-F 后更新。

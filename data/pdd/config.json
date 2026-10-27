@@ -1,7 +1,7 @@
 {
   "tax_rate": 0.27,
   "eps26e_rmb": 64.64,
-  "net_cash_formula": "(cash_sti + lt_inv − debt) ÷ fx ÷ 1000；不含受限资金。lt_inv = 长期投资/非流动定期存款（资产负债表）。缺任一输入时保留手工值。",
+  "net_cash_formula": "(cash_sti + lt_inv − debt) ÷ fx ÷ 1000；不含受限资金。6-K 没有长期投资科目，lt_inv 暂用手工值 lt_inv_manual_rmb_mn（由原手工净现金 74.0 倒推 ≈460.5 亿元），每年 20-F 后更新；6-K 若出现该科目则优先用抽取值。",
   "net_cash_auto": true,
   "market_view": "增长明显放缓，现金流充沛却不分红、不回购，估值因此明显折价；监管风险和新投入的回报不确定，进一步压低了估值。",
   "ads_per_share": 4,
@@ -29,5 +29,6 @@
   },
   "seed_authoritative": [
     "25Q4"
-  ]
+  ],
+  "lt_inv_manual_rmb_mn": 46046
 }
