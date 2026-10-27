@@ -279,5 +279,23 @@
   "title": "H&H International 加仓 PDD",
   "detail": "增至 2,502.2 万股（+27%），占组合 10.0%",
   "source": "https://www.sec.gov/Archives/edgar/data/1759760/000175976026000007/"
+ },
+ {
+  "id": "e9",
+  "date": "2026-10-16",
+  "quarter": "26Q4",
+  "kind": "event",
+  "title": "得州与Temu达成300万美元数据隐私和解",
+  "detail": "和解要求Temu将得州用户数据存于美国服务器并加强产品安全检测",
+  "source": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-paxton-secures-first-its-kind-settlement-temu-protect-texans-data-ccp-and-protect"
+ },
+ {
+  "id": "e10",
+  "date": "2026-10-26",
+  "quarter": "26Q4",
+  "kind": "event",
+  "title": "欧盟接受Temu整改计划限期四个月执行",
+  "detail": "欧委会在5月处以2亿欧元罚款后正式接受Temu的DSA合规行动计划",
+  "source": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2257"
  }
 ]
