@@ -185,7 +185,7 @@ def extract(doc_meta, text):
         r[k] = v[0] if v else None
     for k, pat in [('fcf', r'(?:negative )?free cash flow (?:for the [\w ]+ )?(?:of|was|were) (?:RMB)?\s?(-?[\d.]+) billion'),
                    ('cfo', r'operating activities of RMB\s?([\d.]+) billion'),
-                   ('capex_paid', r'capital expenditure payments of RMB\s?([\d.]+)\s+billion'),
+                   ('capex_paid', r'(?:capital expenditure payments|payments for capital expenditures) of RMB\s?([\d.]+)\s*billion'),
                    ('fcf_ex_prepay', r'Excluding the prepayments for compute procurement, our free cash flow would have been RMB\s?([\d.]+) billion')]:
         m = d.rx(pat)
         v = bn(m)
