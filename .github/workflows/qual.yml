@@ -1,7 +1,5 @@
 name: qual (disabled: no API key; news comes via inbox/)
 on:
-  schedule:
-    - cron: "0 3 * * 1"
   workflow_dispatch:
 permissions:
   contents: write
