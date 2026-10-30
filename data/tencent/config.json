@@ -34,5 +34,15 @@
  "ccass_southbound_ids": [],
  "market_view": "核心业务（游戏、广告）稳健但增速放缓；AI 资本开支压制利润和现金流，回购大幅收缩；中国资产的风险溢价压低了估值倍数。",
  "claude_model": "",
- "prompt_version": "tencent-v1"
+ "prompt_version": "tencent-v1",
+ "holder_aliases": {
+  "Prosus N.V.": "Prosus",
+  "Naspers Limited": "Naspers",
+  "MIH TC Holdings Limited": "MIH TC",
+  "Advance Data Services Limited": "Advance Data",
+  "Ma Huateng": "马化腾",
+  "China Securities Depository and Clearing Corporation Limited": "中国结算",
+  "The Hongkong and Shanghai Banking Corporation Limited": "汇丰",
+  "Citibank N.A.": "花旗"
+ }
 }

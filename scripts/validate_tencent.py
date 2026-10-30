@@ -18,6 +18,8 @@ for i, r in enumerate(fin):
     miss = [k for k in ('net_cash', 'cash_total', 'inv_listed_fv', 'inv_unlisted_bv', 'capex', 'fcf') if r.get(k) is None]
     if miss:
         errs.append(f'{q}: 缺 {",".join(miss)}')
+    if r.get('ni_ng') and (r.get('fcf') is None or not r['ni_ng']):
+        errs.append(f'{q}: 现金转化率无法计算（fcf 或 ni_ng 缺失）')
     if i and r.get('op_exai') is not None and fin[i - 1].get('op_exai') is not None:
         d0, d1 = fin[i - 1]['op_exai'] - fin[i - 1]['op_ng'], r['op_exai'] - r['op_ng']
         if d0 and abs(d1 / d0 - 1) > 0.5:

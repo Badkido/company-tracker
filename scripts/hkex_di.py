@@ -1,5 +1,5 @@
 """腾讯权益披露（港交所 DI）→ data/tencent/holders.json。
-来源：di.hkex.com.hk 的“主要股东完整名单”和“董事完整名单”（按各人最后一次申报列示）。
+来源：di.hkex.com.hk 的“主要股东完整名单”（按各人最后一次申报列示，只保留 ≥5%）。
 用法：python hkex_di.py
 """
 import html as htmllib
@@ -31,18 +31,16 @@ def rows(page, sa2):
 
 def main():
     ss = rows('NSAllSSList.aspx', 'as')
-    dirs = rows('NSAllDirList.aspx', 'ad')
-    merged = []  # 同一持仓由多方申报（如公司与其董事、母公司与子公司），合并成一行
+    merged = []  # 同一持仓由多方申报（如母公司与子公司、公司与其董事），合并成一行
     for r in ss:
         twin = next((m for m in merged if m['shares'] == r['shares'] and m['asof'] == r['asof']), None)
         if twin:
             twin['holder'] += ' / ' + r['holder']
         else:
             merged.append(dict(r))
-    holders = [dict(r, type='主要股东（≥5%）') for r in merged]
-    holders += [dict(r, type='董事') for r in dirs if not any(r['holder'] in h['holder'] for h in holders)]
+    holders = [dict(r, type='主要股东（≥5%）') for r in merged if r['pct'] >= 0.05]  # 董事权益不列
     OUT.write_text(json.dumps(holders, ensure_ascii=False, indent=1) + '\n')
-    print(f'wrote {len(holders)} holders ({len(ss)} substantial, {len(dirs)} directors)')
+    print(f'wrote {len(holders)} substantial holders')
 
 
 if __name__ == '__main__':

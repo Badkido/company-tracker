@@ -140,12 +140,12 @@
       </div>
       <div class="card">
         <h3>主要股东（实益）</h3>
-        <p class="note">来自港交所权益披露，按各人最后一次申报列示：占比为申报当时的比例，早期申报（如 2018 年）可能已被后续变动取代；港股只披露 ≥5% 股东及董事权益。点击股东名称查看原始申报。</p>
-        <div class="scroll"><table id="t-tx-hold"><thead><tr><th>股东</th><th>类型</th><th class="n">持股数</th><th class="n">占已发行股本</th><th>最后申报</th></tr></thead><tbody></tbody></table></div>
+        <p class="note">来自港交所权益披露，只列持股 ≥5% 的主要股东，按各人最后一次申报列示：占比为申报当时的比例，早期申报（如 2018 年）可能已被后续变动取代。悬停显示原始全称，点击名称查看原始申报。</p>
+        <div class="scroll"><table id="t-tx-hold"><thead><tr><th>股东</th><th class="n">持股数</th><th class="n">占已发行股本</th><th>最后申报</th></tr></thead><tbody></tbody></table></div>
       </div>
       <div class="card wide">
-        <h3>管理团队与董事会</h3>
-        <p class="note">来自 2025 年年报“董事及高级管理层”（<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901231.pdf" target="_blank" rel="noopener" style="color:inherit">披露易原文</a>），年龄为年报口径；中文姓名为通行译名，以年报英文名为准。</p>
+        <h3>管理团队</h3>
+        <p class="note">只列高级管理层（董事不列）。来自 2025 年年报“董事及高级管理层”（<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901231.pdf" target="_blank" rel="noopener" style="color:inherit">披露易原文</a>），年龄为年报口径；中文姓名为通行译名，以年报英文名为准。</p>
         <div class="scroll"><table id="t-tx-people"><thead><tr><th>姓名</th><th class="n">年龄</th><th>职位</th><th>学历</th><th>经历</th></tr></thead><tbody></tbody></table></div>
       </div>
     </section>
@@ -156,6 +156,7 @@
         <p class="note">每股价值 = ① 核心业务 ＋ ② 投资组合 ＋ ③ 净现金 − ④ AI 拖累。四块各自独立，点击跳到明细；不给出单一每股价值。</p>
         <div class="formula" id="tx-formula"></div>
         <p class="take" id="tx-take"></p>
+        <p class="take" id="tx-cashcheck"></p>
       </div>
       <div class="card wide" id="tx-s1">
         <h3>① 核心业务</h3>
@@ -255,7 +256,8 @@
         <li>剔除新 AI 产品经营利润、剔除算力预付款的自由现金流为近期新增口径，历史季度为空，不倒推。</li>
         <li>新 AI 产品的收入、用户数、成本构成不披露；AI 产出页为定性跟踪。</li>
         <li>联营公司利润用非 IFRS 口径；IFRS 口径会被被投企业的公允价值调整扭曲。</li>
-        <li>主要股东、管理团队、日度回购、南向资金：抽取待接入。</li>
+        <li>日度回购、南向资金不做；回购只有业绩公告里的季度数。</li>
+        <li>现金余额 = 现金及现金等价物 + 定期存款及其他（业绩公告流动性表相加），公告没有单列“总现金”。</li>
       </ul>
     </div>
   </section>

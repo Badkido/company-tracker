@@ -78,3 +78,7 @@ details.prod summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:8px;align-it
 .logrow{margin:2px 0 2px 16px;font-size:12px}
 .logrow .d{margin-right:6px}
 #tx-products h4{margin:10px 0 2px;font-size:13px}
+td.ell{max-width:16em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+td.lvp{padding-left:8px}
+#t-tx-people td:nth-child(3){min-width:10em}
+#t-tx-people td:nth-child(4),#t-tx-people td:nth-child(5){min-width:16em}
