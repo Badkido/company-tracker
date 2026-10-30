@@ -1,0 +1,166 @@
+{
+ "signals": [
+  {
+   "id": "s1",
+   "name": "投入与使用",
+   "judgment": "算力采购大幅加码，公司称应用与模型使用量快速增长，但未披露使用量数字。",
+   "basis": "26Q2 公告业务回顾：“substantially stepped up our procurement of compute”；WorkBuddy、CodeBuddy 用户增长“breakout”。",
+   "status": "观察",
+   "updated": "26Q2",
+   "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf"
+  },
+  {
+   "id": "s2",
+   "name": "投入与利润表",
+   "judgment": "剔除新 AI 产品的经营利润高于 Non-IFRS 经营利润，差额（AI 拖累）较 26Q1 扩大。",
+   "basis": "公告披露剔除口径：26Q1 约 844 亿元、26Q2 861 亿元，对应 Non-IFRS 经营利润 756 亿元。",
+   "status": "压力在后",
+   "updated": "26Q2",
+   "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf"
+  },
+  {
+   "id": "s3",
+   "name": "算力对外变现",
+   "judgment": "公告提到“外部云服务需求增长”，未单独披露云或算力对外收入。",
+   "basis": "26Q2 公告现金流段落：预付款“to meet growing external demand for our cloud services”。",
+   "status": "未确认",
+   "updated": "26Q2",
+   "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf"
+  }
+ ],
+ "turns": [
+  {
+   "id": "t1",
+   "text": "财报中 AI 拖累不再扩大",
+   "status": "未出现",
+   "evidence": "26Q2 剔除口径与 Non-IFRS 经营利润的差额较 26Q1 扩大。",
+   "updated": "26Q2"
+  },
+  {
+   "id": "t2",
+   "text": "单独披露 AI 产品收入或付费用户",
+   "status": "未出现",
+   "evidence": "26Q2 公告未披露新 AI 产品收入或付费用户数；仅称 WorkBuddy 用户“willingness to pay”较高。",
+   "updated": "26Q2"
+  },
+  {
+   "id": "t3",
+   "text": "确认对外出租 GPU/MaaS 带来可观收入",
+   "status": "未出现",
+   "evidence": "公告仅提外部需求增长，无收入数字。",
+   "updated": "26Q2"
+  },
+  {
+   "id": "t4",
+   "text": "资源集中形成商业化主线",
+   "status": "观察中",
+   "evidence": "公告将 Hy3、WorkBuddy/CodeBuddy、算力列为三层主线，尚无变现数据。",
+   "updated": "26Q2"
+  }
+ ],
+ "products": [
+  {
+   "id": "workbuddy",
+   "group": "应用",
+   "name": "WorkBuddy",
+   "position": "AI 办公助手",
+   "tag": "增长中",
+   "judgment": "公司称用户增长快、留存健康、用户愿为 token 订阅和充值付费；无数字披露。",
+   "logs": [
+    {
+     "date": "2026-08-12",
+     "kind": "财报",
+     "text": "称用户快速增长、留存健康，订阅与充值付费意愿高；引用 Analysys 称 6 月为中国同类产品交互量第一。",
+     "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
+     "secondhand": false
+    }
+   ]
+  },
+  {
+   "id": "codebuddy",
+   "group": "应用",
+   "name": "CodeBuddy",
+   "position": "AI 编程工具",
+   "tag": "增长中",
+   "judgment": "公司称用户“breakout”增长、国内领先；无数字披露。",
+   "logs": [
+    {
+     "date": "2026-08-12",
+     "kind": "财报",
+     "text": "与 WorkBuddy 并列称国内同类领先（Analysys，6 月）。",
+     "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
+     "secondhand": false
+    }
+   ]
+  },
+  {
+   "id": "xiaowei",
+   "group": "应用",
+   "name": "小微 Xiaowei",
+   "position": "微信内智能体",
+   "tag": "小范围测试",
+   "judgment": "近几周开始小规模原型测试，基于定制模型 WeLM。",
+   "logs": [
+    {
+     "date": "2026-08-12",
+     "kind": "财报",
+     "text": "开始小规模原型测试；由为隐私、微信场景和推理效率定制的 WeLM 驱动。",
+     "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
+     "secondhand": false
+    }
+   ]
+  },
+  {
+   "id": "yuanbao",
+   "group": "应用",
+   "name": "元宝",
+   "position": "AI 助手",
+   "tag": "本季未提及",
+   "judgment": "26Q2 公告未提及，不作判断。",
+   "logs": []
+  },
+  {
+   "id": "hy3",
+   "group": "模型与平台",
+   "name": "混元 Hy3",
+   "position": "自研大模型",
+   "tag": "7 月发布正式版",
+   "judgment": "公司称自 7 月 7 日起 token 消耗量在 OpenRouter 持续位列全球前三；该排名受免费期影响，暂不作为采用证据。",
+   "logs": [
+    {
+     "date": "2026-08-12",
+     "kind": "财报",
+     "text": "2026 年 7 月发布 Hy3 正式版；自 7 月 7 日起 OpenRouter token 消耗量持续位列全球前三。",
+     "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
+     "secondhand": false
+    }
+   ]
+  },
+  {
+   "id": "tokenhub",
+   "group": "模型与平台",
+   "name": "TokenHub",
+   "position": "模型调用平台",
+   "tag": "本季未提及",
+   "judgment": "26Q2 公告未提及，不作判断。",
+   "logs": []
+  },
+  {
+   "id": "gpu",
+   "group": "算力对外",
+   "name": "GPU 对外出租",
+   "position": "算力对外",
+   "tag": "未确认",
+   "judgment": "仅提及外部云服务需求增长，无收入数字。",
+   "logs": [
+    {
+     "date": "2026-08-12",
+     "kind": "财报",
+     "text": "算力预付款部分用于满足“外部云服务需求增长”。",
+     "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
+     "secondhand": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "price_hkd": 382.4,
+ "price_date": "2026-10-30",
+ "stale": false,
+ "fx_cny_per_hkd": 0.8483,
+ "shares_mn": 9092.6,
+ "shares_asof": "2026-09",
+ "dps_hkd": 5.3,
+ "dps_year": 2025,
+ "dps_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf（附注 7：2025 年末期股息每股 5.30 港元）"
+}

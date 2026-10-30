@@ -284,6 +284,7 @@ function showPage(id) {
     const el = $(b.dataset.page);
     if (el) el.hidden = !on;
   });
+  if (id === 'tencent' && window.txShown) window.txShown();
 }
 function showTab(id) {
   document.querySelectorAll('.subtab').forEach((b) => {
@@ -319,6 +320,7 @@ function buildNav(companies) {
   window.addEventListener('resize', () => { if (growthData) drawGrowth(growthData); });
   const h = location.hash.slice(1);
   if (['pdd-profile', 'pdd-track', 'pdd-change'].includes(h)) { showPage('pdd'); showTab(h); }
+  else if (h === 'tencent' || h.startsWith('tx-')) showPage('tencent');
   else showPage(h === 'overview' ? 'overview' : 'pdd');
 }
 

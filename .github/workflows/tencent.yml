@@ -1,0 +1,46 @@
+name: tencent
+on:
+  schedule:
+    - cron: "30 8 * * 1-5"   # 行情（港股收盘后）
+    - cron: "0 2,11 * * *"   # 业绩公告
+    - cron: "0 3 1-10 * *"   # 月报表
+  workflow_dispatch:
+    inputs:
+      task: { description: "price / results / monthly", default: results }
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      TASK: ${{ github.event.inputs.task || (github.event.schedule == '30 8 * * 1-5' && 'price') || (github.event.schedule == '0 3 1-10 * *' && 'monthly') || 'results' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Run task
+        run: |
+          cd scripts
+          case "$TASK" in
+            price) python price_tencent.py ;;
+            monthly) python hkex_monthly.py 14; python hkex_di.py ;;
+            results) python hkex_tencent.py check ;;
+          esac
+      - id: v
+        if: env.TASK == 'results'
+        run: cd scripts && python validate_tencent.py
+        continue-on-error: true
+      - name: Publish
+        if: env.TASK != 'results' || steps.v.outcome == 'success'
+        run: |
+          git config user.name "tracker-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data/tencent && (git diff --cached --quiet || git commit -m "tencent: $TASK" && git push)
+      - name: Open PR when validation failed
+        if: env.TASK == 'results' && steps.v.outcome == 'failure'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: tencent-needs-review
+          title: "腾讯业绩抽取未通过校验，请人工确认"
+          add-paths: data/tencent

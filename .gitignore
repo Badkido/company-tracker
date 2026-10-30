@@ -4,3 +4,4 @@ data/pdd/pending/
 data/pdd/pr_body.md
 data/pdd/extract_report.txt
 .claude/
+scripts/.cache_tencent/

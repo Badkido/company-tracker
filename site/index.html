@@ -113,8 +113,155 @@
       </ul>
     </div>
   </section>
+
+  <section class="page" id="tencent" hidden>
+    <div class="headrow"><h1>0700.HK · 腾讯控股</h1><span class="d" id="tx-date">—</span></div>
+    <div class="tiles">
+      <div class="tile"><span class="lab">股价（港元）</span><span class="num" id="tx-price">—</span></div>
+      <div class="tile"><span class="lab">市值（亿港元）</span><span class="num" id="tx-mcap">—</span></div>
+      <div class="tile"><span class="lab">PE TTM</span><span class="num" id="tx-pettm">—</span></div>
+      <div class="tile"><span class="lab">核心 PE</span><span class="num" id="tx-cpe">—</span></div>
+      <div class="tile"><span class="lab">股息率</span><span class="num" id="tx-dy">—</span></div>
+    </div>
+    <p class="view"><b>市场观点</b><span id="tx-view"></span></p>
+
+    <div class="sub" role="tablist" aria-label="腾讯">
+      <button class="tab txtab" role="tab" data-tab="tx-profile" aria-selected="false">公司档案</button>
+      <button class="tab txtab" role="tab" data-tab="tx-track" aria-selected="true">判断与追踪</button>
+      <button class="tab txtab" role="tab" data-tab="tx-flow" aria-selected="false">资金面与事件</button>
+      <button class="tab txtab" role="tab" data-tab="tx-ai" aria-selected="false">AI 产出</button>
+    </div>
+
+    <section class="sec" id="tx-profile" hidden>
+      <div class="card wide">
+        <h3>核心财务（滚动 4 季度）</h3>
+        <p class="note">单位：亿元人民币（回购为亿港元）。灰色缩进行为比率（占收入比重或同比）。数据取自港交所披露易业绩公告；国内游戏、海外游戏、社交网络只在正文以十亿元精度披露。金融科技与企业服务合计披露，云收入、单款游戏收入不披露。</p>
+        <div class="scroll"><table id="t-tx-fin"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>主要股东（实益）</h3>
+        <p class="note">来自港交所权益披露，按各人最后一次申报列示：占比为申报当时的比例，早期申报（如 2018 年）可能已被后续变动取代；港股只披露 ≥5% 股东及董事权益。点击股东名称查看原始申报。</p>
+        <div class="scroll"><table id="t-tx-hold"><thead><tr><th>股东</th><th>类型</th><th class="n">持股数</th><th class="n">占已发行股本</th><th>最后申报</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>管理团队与董事会</h3>
+        <p class="note">来自 2025 年年报“董事及高级管理层”（<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901231.pdf" target="_blank" rel="noopener" style="color:inherit">披露易原文</a>），年龄为年报口径；中文姓名为通行译名，以年报英文名为准。</p>
+        <div class="scroll"><table id="t-tx-people"><thead><tr><th>姓名</th><th class="n">年龄</th><th>职位</th><th>学历</th><th>经历</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="sec" id="tx-track">
+      <div class="card wide">
+        <h3>估值框架</h3>
+        <p class="note">每股价值 = ① 核心业务 ＋ ② 投资组合 ＋ ③ 净现金 − ④ AI 拖累。四块各自独立，点击跳到明细；不给出单一每股价值。</p>
+        <div class="formula" id="tx-formula"></div>
+        <p class="take" id="tx-take"></p>
+      </div>
+      <div class="card wide" id="tx-s1">
+        <h3>① 核心业务</h3>
+        <div class="opts"><span class="lab">核心 PE</span><span id="tx-pe" class="optrow"></span></div>
+        <div class="scroll"><table id="t-tx-drv"><thead><tr></tr></thead><tbody></tbody></table></div>
+        <p class="note" id="tx-drv-note"></p>
+        <p class="note" id="tx-core-calc"></p>
+        <p class="note">分业务收入同比（近 8 季）</p>
+        <div class="chart" id="tx-c-growth"></div>
+      </div>
+      <div class="card wide" id="tx-s2">
+        <h3>② 投资组合</h3>
+        <p class="note">上市公司股权按公允价值、非上市按账面价值，再打折扣。按钮下方为该折扣对应的整体每股价值（港元）。</p>
+        <div class="opts"><span class="lab">折扣</span><span id="tx-disc" class="optrow"></span></div>
+        <div class="scroll"><table id="t-tx-port"><thead><tr></tr></thead><tbody></tbody></table></div>
+        <p class="note" id="tx-port-take"></p>
+      </div>
+      <div class="card wide" id="tx-s3">
+        <h3>③ 净现金</h3>
+        <p class="note">净现金取公司口径。回购按最新汇率折人民币，仅为估算；派息未单列，计入“其他”。</p>
+        <div class="scroll"><table id="t-tx-cash"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide" id="tx-s4">
+        <h3>④ AI 拖累</h3>
+        <p class="note">AI 拖累 = 剔除新 AI 产品经营利润 − Non-IFRS 经营利润（公司口径，26Q1 起披露）。倍数与核心业务相同。</p>
+        <div class="opts"><span class="lab">口径</span><span id="tx-mode" class="optrow"></span></div>
+        <div class="scroll"><table id="t-tx-drag"><thead><tr></tr></thead><tbody></tbody></table></div>
+        <p class="note" id="tx-drag-take"></p>
+        <div class="chart" id="tx-c-capex"></div>
+      </div>
+      <div class="card">
+        <h3>敏感性矩阵</h3>
+        <p class="note">每股价值（港元）及相对现价；框内为当前选择，投资组合折扣随 ② 联动。</p>
+        <div class="scroll"><table id="t-tx-matrix"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>零增长估值</h3>
+        <p class="note">每股 =（核心利润（按 AI 口径调整）÷ 要求回报率 + 折后投资组合 + 净现金）÷ 股数。</p>
+        <div class="opts"><span class="lab">要求回报率</span><span id="tx-r" class="optrow"></span></div>
+        <div class="scroll"><table id="t-tx-zero"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>管理层问答口径</h3>
+        <div class="scroll"><table id="t-tx-qa"><thead><tr><th>财报季</th><th>要点</th><th>补充</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="sec" id="tx-flow" hidden>
+      <div class="card">
+        <h3>公司回购（按季）</h3>
+        <p class="note">来自业绩公告，Q2、Q4 为累计值扣除前几季。翌日披露报表的日度/月度明细待接入；业绩前禁售期通常暂停回购。</p>
+        <div class="scroll"><table id="t-tx-bb"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>股本（月报表）</h3>
+        <p class="note">港交所证券变动月报表；估值用最新月的已发行股数 − 库存股。</p>
+        <div class="scroll"><table id="t-tx-sh"><thead><tr></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <h3>南向资金</h3>
+        <p class="note">数据源待定（CCASS 为表单页，尚未实测可抓取）。港交所不公布逐股南向净买入金额。</p>
+      </div>
+      <div class="card">
+        <h3>大股东增减持</h3>
+        <p class="note">来自权益披露；高亮 = 上次业绩公告后新发生。</p>
+        <div class="scroll"><table id="t-tx-holder"><thead><tr><th>时间</th><th>变化</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>重大事件与观点变化</h3>
+        <p class="note">观点变化只记录评级或目标价明显变化的事实，不引用预测数字。</p>
+        <div class="scroll"><table id="t-tx-event"><thead><tr><th>时间</th><th>事件</th><th>说明</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="sec" id="tx-ai" hidden>
+      <div class="card wide">
+        <h3>变现信号</h3>
+        <p class="note">定性跟踪，由 Claude 起草、Danny 审核；数字只用业绩公告原文，不引用卖方或媒体数字。</p>
+        <div class="scroll"><table id="t-tx-sig"><thead><tr><th>信号</th><th>判断</th><th>依据</th><th>状态</th><th>更新</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>拐点</h3>
+        <p class="note">状态只能按 未出现 → 观察中 → 已出现 单向推进。</p>
+        <div class="scroll"><table id="t-tx-turn"><thead><tr><th>拐点</th><th>状态</th><th>证据</th><th>更新</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card wide">
+        <h3>产品与模型</h3>
+        <div id="tx-products"></div>
+      </div>
+    </section>
+
+    <div class="card">
+      <h3>数据局限</h3>
+      <ul class="limits">
+        <li>金融科技与企业服务只披露合计；云收入、单款游戏收入不披露。</li>
+        <li>国内游戏、海外游戏、社交网络只在正文以十亿元精度披露；研发费用不单列，表中为含研发的一般及行政。</li>
+        <li>剔除新 AI 产品经营利润、剔除算力预付款的自由现金流为近期新增口径，历史季度为空，不倒推。</li>
+        <li>新 AI 产品的收入、用户数、成本构成不披露；AI 产出页为定性跟踪。</li>
+        <li>联营公司利润用非 IFRS 口径；IFRS 口径会被被投企业的公允价值调整扭曲。</li>
+        <li>主要股东、管理团队、日度回购、南向资金：抽取待接入。</li>
+      </ul>
+    </div>
+  </section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="app.js"></script>
+<script src="tencent.js"></script>
 </body>
 </html>

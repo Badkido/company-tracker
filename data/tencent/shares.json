@@ -1,0 +1,114 @@
+[
+ {
+  "month": "2025-08",
+  "issued_ex_treasury": 9172281459.0,
+  "treasury": 0.0,
+  "issued_total": 9172281459.0,
+  "other_movement": 16936892.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0904/2025090401897.pdf"
+ },
+ {
+  "month": "2025-09",
+  "issued_ex_treasury": 9153003220.0,
+  "treasury": 0.0,
+  "issued_total": 9153003220.0,
+  "other_movement": -24122000.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1008/2025100801358.pdf"
+ },
+ {
+  "month": "2025-10",
+  "issued_ex_treasury": 9144770041.0,
+  "treasury": 0.0,
+  "issued_total": 9144770041.0,
+  "other_movement": -9137000.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1106/2025110600558.pdf"
+ },
+ {
+  "month": "2025-11",
+  "issued_ex_treasury": 9144870002.0,
+  "treasury": 0.0,
+  "issued_total": 9144870002.0,
+  "other_movement": 0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1204/2025120400760.pdf"
+ },
+ {
+  "month": "2025-12",
+  "issued_ex_treasury": 9120235999.0,
+  "treasury": 0.0,
+  "issued_total": 9120235999.0,
+  "other_movement": -24950000.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0107/2026010700518.pdf"
+ },
+ {
+  "month": "2026-01",
+  "issued_ex_treasury": 9106356125.0,
+  "treasury": 0.0,
+  "issued_total": 9106356125.0,
+  "other_movement": -16527000.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0205/2026020500948.pdf"
+ },
+ {
+  "month": "2026-02",
+  "issued_ex_treasury": 9106356125.0,
+  "treasury": 0.0,
+  "issued_total": 9106356125.0,
+  "other_movement": 0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0305/2026030500596.pdf"
+ },
+ {
+  "month": "2026-03",
+  "issued_ex_treasury": 9123863279.0,
+  "treasury": 0.0,
+  "issued_total": 9123863279.0,
+  "other_movement": 17159141.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0409/2026040901641.pdf"
+ },
+ {
+  "month": "2026-04",
+  "issued_ex_treasury": 9117991636.0,
+  "treasury": 0.0,
+  "issued_total": 9117991636.0,
+  "other_movement": -7606000.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0507/2026050700677.pdf"
+ },
+ {
+  "month": "2026-05",
+  "issued_ex_treasury": 9118061385.0,
+  "treasury": 0.0,
+  "issued_total": 9118061385.0,
+  "other_movement": 0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0604/2026060400753.pdf"
+ },
+ {
+  "month": "2026-06",
+  "issued_ex_treasury": 9092234841.0,
+  "treasury": 0.0,
+  "issued_total": 9092234841.0,
+  "other_movement": -26278100.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070700630.pdf"
+ },
+ {
+  "month": "2026-07",
+  "issued_ex_treasury": 9082721689.0,
+  "treasury": 0.0,
+  "issued_total": 9082721689.0,
+  "other_movement": -9794600.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0806/2026080600836.pdf"
+ },
+ {
+  "month": "2026-08",
+  "issued_ex_treasury": 9103150424.0,
+  "treasury": 0.0,
+  "issued_total": 9103150424.0,
+  "other_movement": 20370028.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0904/2026090400750.pdf"
+ },
+ {
+  "month": "2026-09",
+  "issued_ex_treasury": 9092605595.0,
+  "treasury": 0.0,
+  "issued_total": 9092605595.0,
+  "other_movement": -10634000.0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1007/2026100701204.pdf"
+ }
+]

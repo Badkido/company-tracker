@@ -1,0 +1,20 @@
+[
+ {
+  "id": "e1",
+  "date": "2026-08-12",
+  "quarter": "26Q2",
+  "kind": "event",
+  "title": "发布中期业绩（26Q2）",
+  "detail": "资本开支 527.8 亿元；自由现金流 −138 亿元，剔除算力预付款为 376 亿元；净现金降至 582 亿元",
+  "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf"
+ },
+ {
+  "id": "e2",
+  "date": "2026-05-13",
+  "quarter": "26Q1",
+  "kind": "event",
+  "title": "发布一季度业绩（26Q1）",
+  "detail": "自由现金流 567 亿元，净现金 1,469 亿元",
+  "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0513/2026051300334.pdf"
+ }
+]

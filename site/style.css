@@ -57,3 +57,24 @@ tr.new td:first-child{box-shadow:inset 3px 0 0 var(--muted)}
 .tip .t{color:var(--muted)}
 .fail{color:var(--bad);padding:8px 0;font-size:12px}
 .limits{font-size:12px;color:var(--muted);margin:0;padding-left:18px}
+
+/* 腾讯 */
+.opts{display:flex;align-items:flex-start;gap:8px;margin:4px 0 8px;flex-wrap:wrap}
+.optrow{display:inline-flex;flex-wrap:wrap;gap:4px}
+.opt{display:inline-flex;flex-direction:column;align-items:center;min-width:44px;padding:2px 8px;border:1px solid var(--line);border-radius:4px;background:none;cursor:pointer;font-family:var(--mono);font-size:12px}
+.opt[aria-pressed="true"]{background:var(--hl);border-color:var(--muted);font-weight:600}
+.opt .sub2{font-size:11px;color:var(--muted);font-weight:400}
+.formula{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap}
+.formula .op{align-self:center;color:var(--muted);font-size:18px}
+.fblock{flex:1 1 150px;min-width:0;display:flex;flex-direction:column;gap:2px;text-align:left;padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:none;cursor:pointer}
+.fblock:hover{background:var(--hl)}
+.fblock .big{font-size:18px}
+.fblock .num{font-weight:600}
+.fblock .note1,.note1{font-size:12px;color:var(--muted);font-weight:400}
+td.curcell{box-shadow:inset 0 0 0 1px var(--fg)}
+details.prod{border-top:1px solid var(--line);padding:4px 0}
+details.prod summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.tagx{font-size:11px;border:1px solid var(--line);border-radius:3px;padding:0 6px;color:var(--muted)}
+.logrow{margin:2px 0 2px 16px;font-size:12px}
+.logrow .d{margin-right:6px}
+#tx-products h4{margin:10px 0 2px;font-size:13px}

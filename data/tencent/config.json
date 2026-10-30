@@ -1,0 +1,38 @@
+{
+ "pe_options": [
+  12,
+  15,
+  18
+ ],
+ "pe_default": 15,
+ "pe_ai_follow_core": true,
+ "ai_mode_default": "ttm",
+ "ai_modes": [
+  "none",
+  "ttm",
+  "lq4"
+ ],
+ "disc_options": [
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9
+ ],
+ "disc_default": 0.3,
+ "r_options": [
+  0.1,
+  0.12,
+  0.15
+ ],
+ "r_default": 0.15,
+ "tax_override": null,
+ "ccass_southbound_ids": [],
+ "market_view": "核心业务（游戏、广告）稳健但增速放缓；AI 资本开支压制利润和现金流，回购大幅收缩；中国资产的风险溢价压低了估值倍数。",
+ "claude_model": "",
+ "prompt_version": "tencent-v1"
+}
