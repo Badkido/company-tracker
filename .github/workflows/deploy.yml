@@ -3,6 +3,10 @@ on:
   push:
     branches: [main]
     paths: [site/**, data/**]
+  workflow_run:   # 机器人用默认令牌推送的提交不会触发 push，所以在这些任务成功后补一次部署
+    workflows: [ingest, price, edgar, 13f, tencent]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -11,6 +15,7 @@ permissions:
 concurrency: { group: pages, cancel-in-progress: true }
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
     steps:
