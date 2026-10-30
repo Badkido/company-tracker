@@ -22,45 +22,5 @@
   "asof": "2020-06-12",
   "source": "https://di.hkex.com.hk/di/NSForm1.aspx?fn=CS20200612E00249&sid=6893&corpn=Tencent+Holdings+Ltd.&sd=01/01/2025&ed=30/10/2026&cid=0&sc=00700&src=MAIN&lang=EN&g_lang=en&sa1=cl&scsd=01/01/2025&sced=30/10/2026",
   "type": "主要股东（≥5%）"
- },
- {
-  "holder": "Ke Yang",
-  "shares": 74610.0,
-  "pct": 0.0,
-  "asof": "2026-04-15",
-  "source": "https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260417E00498&sid=6893&corpn=Tencent+Holdings+Ltd.&sd=01/01/2025&ed=30/10/2026&cid=0&sc=00700&src=MAIN&lang=EN&g_lang=en&sa1=cl&scsd=01/01/2025&sced=30/10/2026",
-  "type": "董事"
- },
- {
-  "holder": "Li Dong Sheng",
-  "shares": 92241.0,
-  "pct": 0.0,
-  "asof": "2026-04-15",
-  "source": "https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260417E00489&sid=6893&corpn=Tencent+Holdings+Ltd.&sd=01/01/2025&ed=30/10/2026&cid=0&sc=00700&src=MAIN&lang=EN&g_lang=en&sa1=cl&scsd=01/01/2025&sced=30/10/2026",
-  "type": "董事"
- },
- {
-  "holder": "Stone Ian Charles",
-  "shares": 333733.0,
-  "pct": 0.0,
-  "asof": "2026-04-15",
-  "source": "https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260417E00474&sid=6893&corpn=Tencent+Holdings+Ltd.&sd=01/01/2025&ed=30/10/2026&cid=0&sc=00700&src=MAIN&lang=EN&g_lang=en&sa1=cl&scsd=01/01/2025&sced=30/10/2026",
-  "type": "董事"
- },
- {
-  "holder": "Yang Siu Shun",
-  "shares": 58494.0,
-  "pct": 0.0,
-  "asof": "2026-10-16",
-  "source": "https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20261022E00485&sid=6893&corpn=Tencent+Holdings+Ltd.&sd=01/01/2025&ed=30/10/2026&cid=0&sc=00700&src=MAIN&lang=EN&g_lang=en&sa1=cl&scsd=01/01/2025&sced=30/10/2026",
-  "type": "董事"
- },
- {
-  "holder": "Zhang Xiulan",
-  "shares": 44172.0,
-  "pct": 0.0,
-  "asof": "2026-08-18",
-  "source": "https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260819E00389&sid=6893&corpn=Tencent+Holdings+Ltd.&sd=01/01/2025&ed=30/10/2026&cid=0&sc=00700&src=MAIN&lang=EN&g_lang=en&sa1=cl&scsd=01/01/2025&sced=30/10/2026",
-  "type": "董事"
  }
 ]

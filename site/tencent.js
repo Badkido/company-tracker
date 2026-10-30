@@ -17,6 +17,26 @@
     return e;
   };
   const by = (q) => S.fin.findIndex((r) => r.q === q);
+  // 现金转化率 = 自由现金流 ÷ Non-IFRS 归母净利润；分子为负照常显示负数
+  const conv = (r, k = 'fcf') => (ok(r[k]) && ok(r.ni_ng) && r.ni_ng ? r[k] / r.ni_ng : null);
+  const convTtm = (i, k = 'fcf') => {
+    const f = sumWin(i, (r) => r[k]);
+    const n = sumWin(i, (r) => r.ni_ng);
+    return ok(f) && ok(n) && n ? f / n : null;
+  };
+  const SUFFIX = /[\s,]*(?:\(Hong Kong\)|\(HK\)|Limited|Ltd\.?|N\.V\.|Corporation|Corp\.?|Inc\.?)\s*$/i;
+  // 股东名称简化：先查 config.holder_aliases，查不到就去掉公司后缀；合并行（A / B）逐段处理
+  function shortName(raw) {
+    const aliases = S.cfg.holder_aliases || {};
+    return raw.split(' / ').map((part) => {
+      const p = part.replace(/\s*\(formerly[^)]*\)/i, '').trim();
+      if (aliases[p]) return aliases[p];
+      let q = p;
+      let last;
+      do { last = q; q = q.replace(SUFFIX, '').trim(); } while (q !== last);
+      return q || p;
+    }).join(' / ');
+  }
 
   // ---- 计算 ----
 
@@ -73,7 +93,7 @@
       }
       const tr = el('tr', r.unit === '%' ? 'ratio' : '');
       tr.appendChild(el('td', 'nowrap lv' + r.level, r.metric));
-      r.vals.forEach((v) => tr.appendChild(el('td', 'n' + (r.level === 0 ? ' lv0n' : ''), r.fmt(v))));
+      r.vals.forEach((v, k) => tr.appendChild(el('td', 'n' + (r.level === 0 || (r.lastBold && k === r.vals.length - 1) ? ' lv0n' : ''), r.fmt(v))));
       tb.appendChild(tr);
     });
   }
@@ -153,38 +173,58 @@
       ['费用', '一般及行政（含研发）', '亿元', 0, A('ga')], ['费用', '费用率', '%', 1, sh('ga')],
       ['费用', '销售及市场', '亿元', 0, A('sm')], ['费用', '费用率', '%', 1, sh('sm')],
       ['现金流', '经营现金流', '亿元', 0, A('cfo')], ['现金流', '资本开支（现金付款）', '亿元', 0, A('capex_paid')],
-      ['现金流', '自由现金流', '亿元', 0, A('fcf')], ['现金流', '剔除算力预付款的自由现金流', '亿元', 0, A('fcf_ex_prepay')],
+      ['现金流', '自由现金流', '亿元', 0, A('fcf')], ['现金流', '现金转化率', '%', 1, (i) => conv(F[i])],
+      ['现金流', '剔除算力预付款的自由现金流', '亿元', 0, A('fcf_ex_prepay')], ['现金流', '现金转化率', '%', 1, (i) => conv(F[i], 'fcf_ex_prepay')],
+      ['现金流', '现金余额', '亿元', 'p', A('cash_total')],
       ['股本与回购', '期末已发行股数（亿股，月报表）', '亿股', 0, shareAt],
       ['股本与回购', '当季回购金额（亿港元）', '亿港元', 0, (i) => yi(F[i].buyback_hkd)]
     ];
     const rows = defs.map(([grp, metric, unit, level, f]) => ({
-      grp, metric, unit, level, vals: idx.map(f),
+      grp, metric, unit, level, vals: idx.map(f), lastBold: level === 'p',
       fmt: (v) => (unit === '%' ? pct(v) : unit === '亿股' ? num(v, 2) : num(v))
     }));
     groupedTable($('t-tx-fin'), idx.map((i) => F[i].q), rows);
+    // 只显示高级管理层：职位含管理职务的才显示，纯董事不显示
+    const MGMT = /首席|总裁|副总裁|高级管理/;
+    const mgmt = S.people.filter((p) => MGMT.test(p.title));
     const pd = $('t-tx-people').querySelector('tbody');
     pd.textContent = '';
-    if (!S.people.length) {
+    if (!mgmt.length) {
       const tr = el('tr');
       const td = el('td', '', '年报“董事及高级管理层”抽取待接入。');
       td.colSpan = 5;
       tr.appendChild(td);
       pd.appendChild(tr);
     } else {
-      fillBody($('t-tx-people'), S.people, [{ f: 'name', cls: 'nowrap' }, { f: 'age', cls: 'n' }, { f: 'title' }, { f: 'edu' }, { f: 'background' }]);
+      fillBody($('t-tx-people'), mgmt, [{ f: 'name', cls: 'nowrap' }, { f: 'age', cls: 'n' }, { f: 'title' }, { f: 'edu' }, { f: 'background' }]);
     }
+    // 主要股东：只显示持股 ≥5%；名称简化，悬停显示原始全称
+    const major = S.holders.filter((r) => r.pct >= 0.05);
     const hb = $('t-tx-hold').querySelector('tbody');
     hb.textContent = '';
-    if (!S.holders.length) {
+    if (!major.length) {
       const tr = el('tr');
-      const td = el('td', '', '权益披露（≥5% 股东及董事权益）抽取待接入；CCASS 为表单页，暂未接通。');
-      td.colSpan = 5;
+      const td = el('td', '', '权益披露（≥5% 股东）暂无数据。');
+      td.colSpan = 4;
       tr.appendChild(td);
       hb.appendChild(tr);
-    } else {
-      fillBody($('t-tx-hold'), S.holders, [{ f: 'holder', link: true }, { f: 'type', cls: 'nowrap' }, { cls: 'n', fmt: (r) => d3.format(',.0f')(r.shares) },
-        { cls: 'n', fmt: (r) => d3.format('.2%')(r.pct) }, { f: 'asof', cls: 'nowrap' }]);
     }
+    major.forEach((r) => {
+      const tr = el('tr');
+      const td = el('td', 'ell');
+      td.title = r.holder;
+      const a = el('a', '', shortName(r.holder));
+      a.href = r.source;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.style.color = 'inherit';
+      td.appendChild(a);
+      tr.appendChild(td);
+      tr.appendChild(el('td', 'n', d3.format(',.0f')(r.shares)));
+      tr.appendChild(el('td', 'n', d3.format('.2%')(r.pct)));
+      tr.appendChild(el('td', 'nowrap', r.asof));
+      hb.appendChild(tr);
+    });
   }
 
   // ---- 标签 2：判断与追踪 ----
@@ -222,6 +262,23 @@
     });
     $('tx-take').textContent = `本季要点：核心利润 ${num(yi(c.core))} 亿（${spct(ch(c.core, p.core))}）；投资组合 ${num(yi(c.inv))} 亿；净现金 ${num(yi(c.C))} 亿；` +
       `AI 拖累扣除 ${num(yi(c.ded[S.mode]))} 亿。参数：PE ${S.pe}x · 折扣 ${pct(S.disc, 0)} · AI 口径「${MODES[S.mode]}」。“较上季”用同一组参数分别作用于两个季度，只反映数据变化。`;
+  }
+
+  function renderCashCheck() {
+    const n = S.fin.length;
+    const box = $('tx-cashcheck');
+    box.textContent = '';
+    const pp = (v) => (ok(v) ? (v > 0 ? '▲ ' : v < 0 ? '▼ ' : '') + d3.format('.1f')(Math.abs(v) * 100) + 'pp' : '—');
+    const item = (label, now, before) => {
+      box.appendChild(document.createTextNode(`${label} ${pct(now)}，较上季 `));
+      const d = ok(now) && ok(before) ? now - before : null;
+      box.appendChild(el('span', 'num ' + sgn(d), pp(d)));
+    };
+    box.appendChild(el('b', '', '现金校验：'));
+    item('近 4 季现金转化率', convTtm(n - 1), convTtm(n - 2));
+    box.appendChild(document.createTextNode('；'));
+    item('剔除预付版', convTtm(n - 1, 'fcf_ex_prepay'), convTtm(n - 2, 'fcf_ex_prepay'));
+    box.appendChild(el('span', 'note1', ' 利润中能转化为股东现金的比例。比例越低，按利润估值得出的结论越需要打折扣。剔除预付版须连续 4 季都有披露才计算。'));
   }
 
   function renderCore() {
@@ -301,8 +358,10 @@
       ['净现金（公司口径，亿元）', (i) => yi(F[i].net_cash)], ['每股净现金（港元）', (i) => F[i].net_cash / K],
       ['净现金变动（亿元）', (i) => yi(d(i))], ['　自由现金流', (i) => yi(F[i].fcf)],
       ['　回购（估算，按最新汇率折人民币）', (i) => (ok(bbCny(F[i])) ? -yi(bbCny(F[i])) : null)],
-      ['　其他（含派息、投资等，倒挤）', (i) => (ok(bbCny(F[i])) ? yi(d(i) - F[i].fcf + bbCny(F[i])) : null)]
-    ].map(([m, f]) => ({ cells: [m, ...idx.map((i) => num(f(i)))] }));
+      ['　其他（含派息、投资等，倒挤）', (i) => (ok(bbCny(F[i])) ? yi(d(i) - F[i].fcf + bbCny(F[i])) : null)],
+      ['单季现金转化率（自由现金流 ÷ 净利润）', (i) => conv(F[i]), pct],
+      ['单季现金转化率（剔除预付）', (i) => conv(F[i], 'fcf_ex_prepay'), pct]
+    ].map(([m, f, fm]) => ({ cells: [m, ...idx.map((i) => (fm || num)(f(i)))] }));
     plainTable($('t-tx-cash'), ['指标', ...idx.map((i) => F[i].q)], rows);
   }
 
@@ -532,6 +591,7 @@
   function renderAll() {
     renderHead();
     renderFormula();
+    renderCashCheck();
     renderCore();
     renderPortfolio();
     renderCash();
