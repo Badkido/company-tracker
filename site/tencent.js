@@ -152,7 +152,7 @@
       ['利润', 'IFRS 归母净利润', '亿元', 0, A('ni')],
       ['费用', '一般及行政（含研发）', '亿元', 0, A('ga')], ['费用', '费用率', '%', 1, sh('ga')],
       ['费用', '销售及市场', '亿元', 0, A('sm')], ['费用', '费用率', '%', 1, sh('sm')],
-      ['现金流', '经营现金流', '亿元', 0, A('cfo')], ['现金流', '资本开支（公司口径，权责）', '亿元', 0, A('capex')], ['现金流', '资本开支付款（现金）', '亿元', 0, A('capex_paid')],
+      ['现金流', '经营现金流', '亿元', 0, A('cfo')], ['现金流', '资本开支（现金付款）', '亿元', 0, A('capex_paid')],
       ['现金流', '自由现金流', '亿元', 0, A('fcf')], ['现金流', '剔除算力预付款的自由现金流', '亿元', 0, A('fcf_ex_prepay')],
       ['股本与回购', '期末已发行股数（亿股，月报表）', '亿股', 0, shareAt],
       ['股本与回购', '当季回购金额（亿港元）', '亿港元', 0, (i) => yi(F[i].buyback_hkd)]
@@ -315,13 +315,13 @@
     const rows = [
       ['AI 拖累（税前单季，亿元）', (i) => num(yi(dragQ(F[i])))],
       ['占剔除 AI 经营利润比', (i) => (dragQ(F[i]) == null ? '—' : pct(dragQ(F[i]) / F[i].op_exai))],
-      ['资本开支（权责，亿元）', (i) => num(yi(F[i].capex))],
-      ['拖累 ÷ 资本开支', (i) => (dragQ(F[i]) == null ? '—' : pct(dragQ(F[i]) / F[i].capex))]
+      ['资本开支（现金付款，亿元）', (i) => num(yi(F[i].capex_paid))],
+      ['拖累 ÷ 资本开支', (i) => (dragQ(F[i]) == null ? '—' : pct(dragQ(F[i]) / F[i].capex_paid))]
     ].map(([m, f]) => ({ cells: [m, ...idx.map(f)] }));
     plainTable($('t-tx-drag'), ['指标', ...idx.map((i) => F[i].q)], rows);
     $('tx-drag-take').textContent = `税后：近 4 季 ${num(yi(c.ded.ttm))} 亿 · 最新季 ×4 ${num(yi(c.ded.lq4))} 亿；当前口径扣除 ${num(yi(c.ded[S.mode]))} 亿 × ${S.pe}x = ${num(yi(c.D))} 亿元。` +
       '剔除口径 26Q1 起披露，此前季度无拖累数据。';
-    S.bars = F.slice(-6).map((r) => ({ q: r.q, capex: yi(r.capex), drag: yi(dragQ(r)) }));
+    S.bars = F.slice(-6).map((r) => ({ q: r.q, capex: yi(r.capex_paid), drag: yi(dragQ(r)) }));
     drawBars('tx-c-capex', S.bars);
   }
 
@@ -503,7 +503,7 @@
         .attr('x', (d) => x0(d.q) + x1(k) + x1.bandwidth() / 2).attr('y', (d) => y(d[k]) - 3).attr('text-anchor', 'middle').attr('font-size', 10)
         .attr('fill', 'var(--muted)').text((d) => d3.format(',.0f')(d[k]));
     });
-    svg.append('text').attr('x', left + 4).attr('y', 10).attr('font-size', 11).attr('fill', 'var(--fg)').text('■ 资本开支（亿元）');
+    svg.append('text').attr('x', left + 4).attr('y', 10).attr('font-size', 11).attr('fill', 'var(--fg)').text('■ 资本开支付款（亿元）');
     svg.append('text').attr('x', left + 140).attr('y', 10).attr('font-size', 11).attr('fill', 'var(--muted)').text('■ AI 拖累（亿元，税前）');
   }
 
