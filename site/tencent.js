@@ -353,7 +353,9 @@
   }
 
   function renderQa() {
-    const qa = S.log.filter((r) => r.kind === 'qa').sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 4);
+    const all = S.log.filter((r) => r.kind === 'qa').sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.id < b.id ? -1 : 1));
+    const keep = new Set([...new Set(all.map((r) => r.quarter))].slice(0, 4));  // 近 4 个季度，每季最多 4 条
+    const qa = all.filter((r) => keep.has(r.quarter));
     const latest = S.fin[S.fin.length - 1].q;
     if (!qa.length) {
       const tb = $('t-tx-qa').querySelector('tbody');
