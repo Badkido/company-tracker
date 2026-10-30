@@ -1,0 +1,78 @@
+[
+  {
+    "company": "tencent",
+    "kind": "event",
+    "date": "2026-10-22",
+    "title": "腾讯完成 18 亿美元及 260 亿元人民币优先票据发行",
+    "detail": "包含美元 10 年期及 20 年期、人民币 10 年期及 30 年期四档优先票据，依据全球中期票据计划发行。",
+    "source": "https://www.tencent.com/wp-content/uploads/2026/10/e700_Joshua-Closing-Announcement.pdf"
+  },
+  {
+    "company": "tencent",
+    "kind": "event",
+    "date": "2026-10-06",
+    "title": "腾讯与宁德时代领投 DeepSeek 新一轮融资",
+    "detail": "据彭博社报道，腾讯为本轮承诺出资金额最高的投资方之一，融资规模远超最初目标。",
+    "source": "https://news.qq.com/rain/a/20261006A074JI00"
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "hy3",
+    "date": "2026-10-26",
+    "log_kind": "第三方",
+    "text": "混元团队发布并开源实时同声传译模型 Hy-SimulMT，Apache 2.0 许可，支持中英双向语音到语音翻译。",
+    "source": "https://github.com/Tencent-Hunyuan/Hy-SimulMT",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "hy3",
+    "date": "2026-10-19",
+    "log_kind": "第三方",
+    "text": "混元开源 Terminal-RSI 模型，官方称在多项公开基准上排名第一。",
+    "source": "https://aiproducthub.cn/newsflash/tencent-hunyuan-terminal-rsi-opensource-27b-tops-4-benchmarks/",
+    "secondhand": true
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "hy3",
+    "date": "2026-10-18",
+    "log_kind": "第三方",
+    "text": "混元开源 Hy-Memory 记忆专用模型，官方称在记忆相关评测上表现领先。",
+    "source": "https://aiproducthub.cn/newsflash/tencent-hunyuan-hy-memory-30b-a3b-three-layer-opensource-beats-opus5/",
+    "secondhand": true
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "workbuddy",
+    "date": "2026-10-20",
+    "log_kind": "第三方",
+    "text": "WorkBuddy 同日接入小米 MiMo-V2.6-Pro、MiniMax-M3.1-Flash 并升级 DeepSeek-V4.1-Flash。",
+    "source": "https://www.ithome.com/1/015/533.htm",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "workbuddy",
+    "date": "2026-10-12",
+    "log_kind": "第三方",
+    "text": "阶跃星辰 Step-5-Preview 旗舰模型登陆 WorkBuddy，限时免费使用。",
+    "source": "https://aiproducthub.cn/newsflash/stepfun-step5-preview-launches-tencent-workbuddy-free/",
+    "secondhand": true
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "yuanbao",
+    "date": "2026-10-20",
+    "log_kind": "第三方",
+    "text": "元宝搜索通过腾讯云向全行业开放，提供 API、MCP、Skill 三种接入方式。",
+    "source": "https://news.qq.com/rain/a/20261020A09KUS00",
+    "secondhand": false
+  }
+]
