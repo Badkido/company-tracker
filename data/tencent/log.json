@@ -34,5 +34,77 @@
   "title": "腾讯与宁德时代领投 DeepSeek 新一轮融资",
   "detail": "据彭博社报道，腾讯为本轮承诺出资金额最高的投资方之一，融资规模远超最初目标。",
   "source": "https://news.qq.com/rain/a/20261006A074JI00"
+ },
+ {
+  "id": "q1",
+  "date": "2026-08-12",
+  "quarter": "26Q2",
+  "kind": "qa",
+  "title": "AI资本开支是今明两年一次性集中投入，不会每年维持同等规模",
+  "detail": "刘炽平称模型训练属固定成本只需储备足额算力，推理算力只有回报达标才追加，不及预期则现有规模封顶。",
+  "source": "https://finance.sina.com.cn/tech/2026-08-12/doc-ininarrc3408590.shtml#qa1"
+ },
+ {
+  "id": "q2",
+  "date": "2026-08-12",
+  "quarter": "26Q2",
+  "kind": "qa",
+  "title": "算力自用优先于对外出租，预付订单已可溢价30%转售",
+  "detail": "米歇尔和刘炽平解释不直接出租算力而是优先自研模型和AI应用；管理层称数月前预付定金下单的算力设备转手可赚超30%。",
+  "source": "https://finance.sina.com.cn/tech/2026-08-12/doc-ininarrc3408590.shtml#qa2"
+ },
+ {
+  "id": "q3",
+  "date": "2026-08-12",
+  "quarter": "26Q2",
+  "kind": "qa",
+  "title": "WorkBuddy定位为全新平台而非企业软件附属，资金向其大幅倾斜",
+  "detail": "刘炽平称WorkBuddy本质是适配AGI的灵活工作台；管理层称Q1到Q2 AI投入从88亿增至105亿，分配向WorkBuddy倾斜同时缩减其他AI产品线。",
+  "source": "https://finance.sina.com.cn/tech/2026-08-12/doc-ininarrc3408590.shtml#qa3"
+ },
+ {
+  "id": "q4",
+  "date": "2026-08-12",
+  "quarter": "26Q2",
+  "kind": "qa",
+  "title": "小微智能体交易闭环是微信长期终局，不会挤压广告曝光",
+  "detail": "刘炽平描绘用户通过小微下达指令、智能体间自动交易的终局；回应广告被挤压担忧称这些风险不会出现。",
+  "source": "https://finance.sina.com.cn/tech/2026-08-12/doc-ininarrc3408590.shtml#qa4"
+ },
+ {
+  "id": "q5",
+  "date": "2026-05-13",
+  "quarter": "26Q1",
+  "kind": "qa",
+  "title": "马化腾确认今年资本开支大幅增加尤其下半年，KPI因产品而异",
+  "detail": "马化腾称对今年资本开支大幅增加更加有信心，尤其下半年随着中国设计ASIC可用量增加；AI产品KPI看能力和使用量，腾讯云看收入和市场份额。",
+  "source": "https://zhuanlan.zhihu.com/p/2038616362734589541#qa1"
+ },
+ {
+  "id": "q6",
+  "date": "2026-05-13",
+  "quarter": "26Q1",
+  "kind": "qa",
+  "title": "AI产品在中国难以完全靠订阅变现，需找高价值场景而非盲目追求DAU",
+  "detail": "刘炽平称中国付费渗透率低、订阅价格远低于西方，AI每个用户都有可变成本，不能套用互联网逻辑盲目追求DAU。",
+  "source": "https://zhuanlan.zhihu.com/p/2038616362734589541#qa2"
+ },
+ {
+  "id": "q7",
+  "date": "2026-05-13",
+  "quarter": "26Q1",
+  "kind": "qa",
+  "title": "GPU优先分配内部AI项目，腾讯云对外租赁有意迟到",
+  "detail": "米歇尔承认有意将GPU优先分配给混元、元宝、WorkBuddy等内部旗舰项目而非通过腾讯云出租；下半年随中国设计GPU供应增加将改善云容量。",
+  "source": "https://zhuanlan.zhihu.com/p/2038616362734589541#qa3"
+ },
+ {
+  "id": "q8",
+  "date": "2026-05-13",
+  "quarter": "26Q1",
+  "kind": "qa",
+  "title": "视频号广告加载率管理层称为行业最低4%-5%，有提升空间但不急于加码",
+  "detail": "米歇尔称腾讯有多个收入增长驱动力包括游戏递延收入、云、金融科技，将作为组合管理广告加载率。",
+  "source": "https://zhuanlan.zhihu.com/p/2038616362734589541#qa4"
  }
 ]
