@@ -73,6 +73,20 @@
      "text": "称用户快速增长、留存健康，订阅与充值付费意愿高；引用 Analysys 称 6 月为中国同类产品交互量第一。",
      "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
      "secondhand": false
+    },
+    {
+     "date": "2026-10-20",
+     "kind": "第三方",
+     "text": "WorkBuddy 同日接入小米 MiMo-V2.6-Pro、MiniMax-M3.1-Flash 并升级 DeepSeek-V4.1-Flash。",
+     "source": "https://www.ithome.com/1/015/533.htm",
+     "secondhand": false
+    },
+    {
+     "date": "2026-10-12",
+     "kind": "第三方",
+     "text": "阶跃星辰 Step-5-Preview 旗舰模型登陆 WorkBuddy，限时免费使用。",
+     "source": "https://aiproducthub.cn/newsflash/stepfun-step5-preview-launches-tencent-workbuddy-free/",
+     "secondhand": true
     }
    ]
   },
@@ -117,7 +131,15 @@
    "position": "AI 助手",
    "tag": "本季未提及",
    "judgment": "26Q2 公告未提及，不作判断。",
-   "logs": []
+   "logs": [
+    {
+     "date": "2026-10-20",
+     "kind": "第三方",
+     "text": "元宝搜索通过腾讯云向全行业开放，提供 API、MCP、Skill 三种接入方式。",
+     "source": "https://news.qq.com/rain/a/20261020A09KUS00",
+     "secondhand": false
+    }
+   ]
   },
   {
    "id": "hy3",
@@ -133,6 +155,27 @@
      "text": "2026 年 7 月发布 Hy3 正式版；自 7 月 7 日起 OpenRouter token 消耗量持续位列全球前三。",
      "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
      "secondhand": false
+    },
+    {
+     "date": "2026-10-26",
+     "kind": "第三方",
+     "text": "混元团队发布并开源实时同声传译模型 Hy-SimulMT，Apache 2.0 许可，支持中英双向语音到语音翻译。",
+     "source": "https://github.com/Tencent-Hunyuan/Hy-SimulMT",
+     "secondhand": false
+    },
+    {
+     "date": "2026-10-19",
+     "kind": "第三方",
+     "text": "混元开源 Terminal-RSI 模型，官方称在多项公开基准上排名第一。",
+     "source": "https://aiproducthub.cn/newsflash/tencent-hunyuan-terminal-rsi-opensource-27b-tops-4-benchmarks/",
+     "secondhand": true
+    },
+    {
+     "date": "2026-10-18",
+     "kind": "第三方",
+     "text": "混元开源 Hy-Memory 记忆专用模型，官方称在记忆相关评测上表现领先。",
+     "source": "https://aiproducthub.cn/newsflash/tencent-hunyuan-hy-memory-30b-a3b-three-layer-opensource-beats-opus5/",
+     "secondhand": true
     }
    ]
   },
