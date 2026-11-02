@@ -1,0 +1,38 @@
+[
+  {
+    "company": "tencent",
+    "kind": "view",
+    "date": "2026-10-26",
+    "title": "摩根士丹利将腾讯目标价从735港元下调至650港元，维持增持评级",
+    "detail": "以AI投入加大导致近期利润率承压为由下调目标价，重申增持评级。",
+    "source": "https://gmteight.com/flash/detail/1252160"
+  },
+  {
+    "company": "tencent",
+    "kind": "event",
+    "date": "2026-10-29",
+    "title": "腾讯与Visa签署合作备忘录，涵盖跨境支付与AI智能体商务",
+    "detail": "备忘录框架包括通过TenPay Global及Visa Pay提升跨境支付体验、腾讯云与Visa在企业级AI合作，以及双方共同探索AI智能体支付新场景。",
+    "source": "https://www.ithome.com/1/019/425.htm"
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "workbuddy",
+    "date": "2026-10-29",
+    "log_kind": "第三方",
+    "text": "腾讯全球数字生态大会正式发布BuddyOne，打通WorkBuddy、腾讯文档、腾讯会议、腾讯网盘及ima，形成面向个人用户的跨应用AI协同体系。",
+    "source": "https://www.stdaily.com/web/gdxw/2026-10/29/content_604984.html",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "hy3",
+    "date": "2026-10-29",
+    "log_kind": "第三方",
+    "text": "腾讯在全球数字生态大会宣布混元Hy4正式版即将上线，首次引入视觉理解，并宣布Hy4-Flash近期跟进发布，主打高性价比。",
+    "source": "https://news.qq.com/rain/a/20261029A07X0X00",
+    "secondhand": false
+  }
+]
