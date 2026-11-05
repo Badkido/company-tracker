@@ -106,5 +106,23 @@
   "title": "视频号广告加载率管理层称为行业最低4%-5%，有提升空间但不急于加码",
   "detail": "米歇尔称腾讯有多个收入增长驱动力包括游戏递延收入、云、金融科技，将作为组合管理广告加载率。",
   "source": "https://zhuanlan.zhihu.com/p/2038616362734589541#qa4"
+ },
+ {
+  "id": "v1",
+  "date": "2026-10-26",
+  "quarter": "26Q4",
+  "kind": "view",
+  "title": "摩根士丹利将腾讯目标价从735港元下调至650港元，维持增持评级",
+  "detail": "以AI投入加大导致近期利润率承压为由下调目标价，重申增持评级。",
+  "source": "https://gmteight.com/flash/detail/1252160"
+ },
+ {
+  "id": "e5",
+  "date": "2026-10-29",
+  "quarter": "26Q4",
+  "kind": "event",
+  "title": "腾讯与Visa签署合作备忘录，涵盖跨境支付与AI智能体商务",
+  "detail": "备忘录框架包括通过TenPay Global及Visa Pay提升跨境支付体验、腾讯云与Visa在企业级AI合作，以及双方共同探索AI智能体支付新场景。",
+  "source": "https://www.ithome.com/1/019/425.htm"
  }
 ]
