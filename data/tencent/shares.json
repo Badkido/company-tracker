@@ -1,13 +1,5 @@
 [
  {
-  "month": "2025-08",
-  "issued_ex_treasury": 9172281459.0,
-  "treasury": 0.0,
-  "issued_total": 9172281459.0,
-  "other_movement": 16936892.0,
-  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0904/2025090401897.pdf"
- },
- {
   "month": "2025-09",
   "issued_ex_treasury": 9153003220.0,
   "treasury": 0.0,
@@ -110,5 +102,13 @@
   "issued_total": 9092605595.0,
   "other_movement": -10634000.0,
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1007/2026100701204.pdf"
+ },
+ {
+  "month": "2026-10",
+  "issued_ex_treasury": 9092644829.0,
+  "treasury": 0.0,
+  "issued_total": 9092644829.0,
+  "other_movement": 0,
+  "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1105/2026110501130.pdf"
  }
 ]
