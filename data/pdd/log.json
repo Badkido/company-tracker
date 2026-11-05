@@ -288,5 +288,23 @@
   "title": "欧盟接受Temu整改计划限期四个月执行",
   "detail": "欧委会在5月处以2亿欧元罚款后正式接受Temu的DSA合规行动计划",
   "source": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_2257"
+ },
+ {
+  "id": "v6",
+  "date": "2026-10-29",
+  "quarter": "26Q4",
+  "kind": "view",
+  "title": "德意志银行上调PDD评级至Buy，维持目标价$105",
+  "detail": "分析师Peter Milliken以“估值过于吸引”为由将评级从Hold上调至Buy，维持8月设立的目标价105美元，PDD股价2026年累跌约30%。",
+  "source": "https://finance.yahoo.com/markets/stocks/articles/pdd-holdings-rose-deutsche-bank-132621721.html"
+ },
+ {
+  "id": "t9",
+  "date": "2026-11-01",
+  "quarter": "26Q4",
+  "kind": "temu",
+  "title": "欧盟对€150以下包裹新增€2手续费，11月1日生效",
+  "detail": "叠加7月起的€3关税后每件商品合计征收€5，路透获取的欧盟委员会文件预测2028-2034年间年增约60亿欧元，PDD管理层8月已指出此举对业务有“可观影响”。",
+  "source": "https://www.rte.ie/news/business/2026/1030/1597371-eu-fees-that-hit-cheap-shein-temu-parcels-may-raise-6bn"
  }
 ]
