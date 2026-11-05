@@ -1,10 +1,7 @@
 name: automerge
-# agent 提交的 inbox PR：校验通过就自动合并并写入数据；不通过则留言并保持打开。
+# 由 Claude 审核完 agent 的 inbox PR 后手动触发（gh workflow run automerge -f pr=N）：校验、合并、写入数据并部署。
+# 不再在 PR 打开时自动触发：内容先经 Claude 核对来源，再上线。
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
-    paths: ["inbox/*.json"]
   workflow_dispatch:
     inputs:
       pr: { description: "PR 编号", required: true }
@@ -18,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-      PR: ${{ github.event.pull_request.number || github.event.inputs.pr }}
+      PR: ${{ github.event.inputs.pr }}
     steps:
       - uses: actions/checkout@v4
-        with: { ref: "refs/pull/${{ github.event.pull_request.number || github.event.inputs.pr }}/merge" }
+        with: { ref: "refs/pull/${{ github.event.inputs.pr }}/merge" }
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install requests
