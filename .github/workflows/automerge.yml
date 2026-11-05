@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 concurrency: { group: automerge, cancel-in-progress: false }
 jobs:
   run:
@@ -39,6 +40,8 @@ jobs:
           cd scripts && python ingest.py && cd ..
           git config user.name "tracker-bot"; git config user.email "bot@users.noreply.github.com"
           git add data inbox && (git diff --cached --quiet || git commit -m "ingest: automerge PR #$PR" && git push origin main)
+      - name: 触发部署（deploy 的 workflow_run 只认 main 分支上的运行，这里的运行在 PR 分支上）
+        run: gh workflow run deploy --ref main
       - name: 校验未通过时留言
         if: failure()
         run: gh pr comment "$PR" --body "自动合并失败，PR 保持打开。请看工作流日志；常见原因：缺来源 URL、日期格式、kind/product 不合法，或改了 inbox 之外的文件。" || true
