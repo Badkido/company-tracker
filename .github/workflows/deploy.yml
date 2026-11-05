@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths: [site/**, data/**]
   workflow_run:   # 机器人用默认令牌推送的提交不会触发 push，所以在这些任务成功后补一次部署
-    workflows: [ingest, price, edgar, 13f, tencent]
+    workflows: [ingest, automerge, price, edgar, 13f, tencent]
     types: [completed]
     branches: [main]
   workflow_dispatch:

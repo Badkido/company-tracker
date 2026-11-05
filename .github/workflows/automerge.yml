@@ -1,0 +1,44 @@
+name: automerge
+# agent 提交的 inbox PR：校验通过就自动合并并写入数据；不通过则留言并保持打开。
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths: ["inbox/*.json"]
+  workflow_dispatch:
+    inputs:
+      pr: { description: "PR 编号", required: true }
+permissions:
+  contents: write
+  pull-requests: write
+concurrency: { group: automerge, cancel-in-progress: false }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number || github.event.inputs.pr }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: "refs/pull/${{ github.event.pull_request.number || github.event.inputs.pr }}/merge" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install requests
+      - name: 只允许同仓库分支、只改 inbox/*.json
+        run: |
+          [ "$(gh pr view "$PR" --json isCrossRepository --jq .isCrossRepository)" = "false" ] || { echo "跨仓库 PR，不自动合并"; exit 1; }
+          bad=$(gh pr diff "$PR" --name-only | grep -v -E '^inbox/[^/]+\.json$' || true)
+          [ -z "$bad" ] || { echo "改了 inbox 之外的文件，不自动合并：$bad"; exit 1; }
+      - name: 校验（与 ingest 同一套规则，整批通过才继续）
+        run: cd scripts && python ingest.py 2>&1 | tee /tmp/ingest.log
+      - name: 合并
+        run: gh pr merge "$PR" --merge
+      - name: 写入数据并提交（合并由 GITHUB_TOKEN 完成，不会触发 push 工作流，所以这里直接跑）
+        run: |
+          git fetch origin main && git checkout -B main origin/main
+          cd scripts && python ingest.py && cd ..
+          git config user.name "tracker-bot"; git config user.email "bot@users.noreply.github.com"
+          git add data inbox && (git diff --cached --quiet || git commit -m "ingest: automerge PR #$PR" && git push origin main)
+      - name: 校验未通过时留言
+        if: failure()
+        run: gh pr comment "$PR" --body "自动合并失败，PR 保持打开。请看工作流日志；常见原因：缺来源 URL、日期格式、kind/product 不合法，或改了 inbox 之外的文件。" || true

@@ -5,3 +5,5 @@
 字段：`kind`(view|event|temu|team|qa)、`date`、`title`、`detail`、`source`（URL，必填）；qa 另需 `quarter`（如 26Q3）。
 
 多公司：每条加 `"company": "pdd"`（默认）或 `"tencent"`。腾讯的 kind 为 `event|view|team|qa|holder`，另有 `ai_log`（给 AI 产品追加动态，字段见 `AGENT_PROMPT_tencent.md`）。腾讯 agent 提示词见 [AGENT_PROMPT_tencent.md](AGENT_PROMPT_tencent.md)。
+
+agent 的 PR 只要只改 `inbox/*.json` 且校验通过，`automerge` 工作流会自动合并并写入数据（不经人工审核）；不通过则留言、PR 保持打开。
