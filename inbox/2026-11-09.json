@@ -1,0 +1,58 @@
+[
+  {
+    "company": "tencent",
+    "kind": "event",
+    "date": "2026-11-05",
+    "title": "腾讯完成处置哔哩哔哩股份并以同等金额认购其可转债",
+    "detail": "腾讯子公司认购哔哩哔哩可转债，同日哔哩哔哩以同等金额回购腾讯持有的部分Z类普通股及ADS，交割完成后腾讯直接持股接近归零。",
+    "source": "https://news.qq.com/rain/a/20261106A07MG500"
+  },
+  {
+    "company": "tencent",
+    "kind": "view",
+    "date": "2026-11-06",
+    "title": "中信里昂将腾讯目标价由740港元下调至685港元，维持优于大市评级",
+    "detail": "以AI投资加快导致Q3盈利承压为由下调目标价，同时看好WorkBuddy与小微的长期成长潜力，维持高信念优于大市评级不变。",
+    "source": "https://m.moneydj.com/f1a.aspx?a=76c21c2e-0175-4727-8da8-429f5d805093"
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "hy3",
+    "date": "2026-11-04",
+    "log_kind": "管理层",
+    "text": "混元Hy4正式版发布，首次引入视觉理解与电脑操作（Computer Use）能力，模型权重近期开源，接入WorkBuddy/CodeBuddy、TokenHub、元宝等多款产品。",
+    "source": "https://www.prnewswire.com/apac/zh/news-releases/-hy4-302929174.html",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "tokenhub",
+    "date": "2026-11-04",
+    "log_kind": "管理层",
+    "text": "Hy4在TokenHub正式上线，官方宣布即日起至2026年12月31日按刊例价5折计费。",
+    "source": "https://www.prnewswire.com/apac/zh/news-releases/-hy4-302929174.html",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "workbuddy",
+    "date": "2026-11-04",
+    "log_kind": "管理层",
+    "text": "Hy4接入WorkBuddy全面提升用户体验，官方宣布WorkBuddy/CodeBuddy将于11月4日至15日提供免费使用额度。",
+    "source": "https://www.prnewswire.com/apac/zh/news-releases/-hy4-302929174.html",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "yuanbao",
+    "date": "2026-11-04",
+    "log_kind": "管理层",
+    "text": "Hy4正式上线元宝，为元宝产品提供新一代模型能力支持。",
+    "source": "https://www.prnewswire.com/apac/zh/news-releases/-hy4-302929174.html",
+    "secondhand": false
+  }
+]
