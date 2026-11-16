@@ -1,0 +1,32 @@
+[
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "workbuddy",
+    "date": "2026-11-12",
+    "log_kind": "第三方",
+    "text": "WorkBuddy企业版首批通过中国信通院FDE交付能力检验，达三级最高等级要求，覆盖交付能力、知识资产、机制组织三大领域。",
+    "source": "http://www.news.cn/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "workbuddy",
+    "date": "2026-11-11",
+    "log_kind": "管理层",
+    "text": "腾讯云携手深广电基于WorkBuddy企业版打造MediaBuddy平台，为APEC 2026深圳新闻中心提供AI采编全流程服务。",
+    "source": "https://cloud.tencent.com/developer/article/2783312",
+    "secondhand": false
+  },
+  {
+    "company": "tencent",
+    "kind": "ai_log",
+    "product": "codebuddy",
+    "date": "2026-11-12",
+    "log_kind": "第三方",
+    "text": "CodeBuddy企业版首批通过中国信通院FDE交付能力检验，达三级最高等级要求，覆盖交付能力、知识资产、机制组织三大领域。",
+    "source": "http://www.news.cn/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html",
+    "secondhand": false
+  }
+]
