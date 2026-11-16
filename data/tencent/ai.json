@@ -101,6 +101,20 @@
      "text": "Hy4接入WorkBuddy全面提升用户体验，官方宣布WorkBuddy/CodeBuddy将于11月4日至15日提供免费使用额度。",
      "source": "https://www.prnewswire.com/apac/zh/news-releases/-hy4-302929174.html",
      "secondhand": false
+    },
+    {
+     "date": "2026-11-12",
+     "kind": "第三方",
+     "text": "WorkBuddy企业版首批通过中国信通院FDE交付能力检验，达三级最高等级要求，覆盖交付能力、知识资产、机制组织三大领域。",
+     "source": "http://www.news.cn/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html",
+     "secondhand": false
+    },
+    {
+     "date": "2026-11-11",
+     "kind": "管理层",
+     "text": "腾讯云携手深广电基于WorkBuddy企业版打造MediaBuddy平台，为APEC 2026深圳新闻中心提供AI采编全流程服务。",
+     "source": "https://cloud.tencent.com/developer/article/2783312",
+     "secondhand": false
     }
    ]
   },
@@ -117,6 +131,13 @@
      "kind": "财报",
      "text": "与 WorkBuddy 并列称国内同类领先（Analysys，6 月）。",
      "source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
+     "secondhand": false
+    },
+    {
+     "date": "2026-11-12",
+     "kind": "第三方",
+     "text": "CodeBuddy企业版首批通过中国信通院FDE交付能力检验，达三级最高等级要求，覆盖交付能力、知识资产、机制组织三大领域。",
+     "source": "http://www.news.cn/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html",
      "secondhand": false
     }
    ]
