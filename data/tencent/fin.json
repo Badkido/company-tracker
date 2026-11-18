@@ -732,7 +732,7 @@
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1118/2026111800448.pdf",
   "source_lang": "en",
   "extracted_at": "2026-11-18T09:48:18+00:00",
-  "buyback_shares": 15.9,
-  "buyback_hkd": 7000
+  "buyback_shares": null,
+  "buyback_hkd": null
  }
 ]
