@@ -17,6 +17,12 @@ def qkey(q):
     return int(q[:2]) * 4 + int(q[3])
 
 
+def _canon(lab):
+    # ignore line breaks and the "(Decrease)/" prefix that appears only when cash falls
+    lab = " ".join(str(lab).split()).lower()
+    return lab.replace("(decrease)/", "")
+
+
 def validate_row(row, prev=None, labels=None, prev_labels=None, annual=None):
     errors, warnings = [], []
     q = row["q"]
@@ -38,7 +44,7 @@ def validate_row(row, prev=None, labels=None, prev_labels=None, annual=None):
                     warnings.append(f"{q}: {k} moved {v / p - 1:+.0%} vs prior quarter ({p} -> {v})")
     if labels and prev_labels:
         for k, lab in labels.items():
-            if k in prev_labels and prev_labels[k] != lab:
+            if k in prev_labels and _canon(prev_labels[k]) != _canon(lab):
                 errors.append(f"{q}: label for {k} changed: '{prev_labels[k]}' -> '{lab}'")
     if annual:  # {"rev": full-year value in RMB mn, "quarters": [4 rows]}
         for k, total in annual.get("totals", {}).items():

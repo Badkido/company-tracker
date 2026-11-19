@@ -286,5 +286,29 @@
   "advances": "Customer advances and deferred revenues",
   "due_to_rel": "Amounts due to related parties",
   "cash_sti": "cash and cash equivalents + Short-term investments"
+ },
+ "26Q3": {
+  "rev": "Revenues",
+  "oms": "- Online marketing services and others",
+  "ts": "- Transaction services",
+  "cogs": "Costs of revenues",
+  "sm": "Sales and marketing expenses",
+  "op": "Operating profit",
+  "op_ng": "Non-GAAP operating profit",
+  "ni_ng": "Non-GAAP net income attributable to ordinary shareholders",
+  "cfo": "Net\n    cash generated from operating activities",
+  "ncf": "Increase in\n    cash, cash equivalents and restricted cash",
+  "cash": "Cash and cash equivalents",
+  "restricted": "Restricted cash",
+  "recv": "Receivables from online payment platforms",
+  "due_from_rel": "Amounts due from related parties",
+  "prepay": "Prepayments and other current assets",
+  "ppe": "Property, equipment and software, net",
+  "pay_merch": "Payable to merchants",
+  "merch_dep": "Merchant deposits",
+  "accrued": "Accrued expenses and other liabilities",
+  "advances": "Customer advances and deferred revenues",
+  "due_to_rel": "Amounts due to related parties",
+  "cash_sti": "cash and cash equivalents + Short-term investments"
  }
 }
