@@ -56,7 +56,7 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0320/2024032000508.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
+  "extracted_at": "2026-11-19T23:21:29+00:00",
   "buyback_shares": null,
   "buyback_hkd": null
  },
@@ -117,9 +117,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0514/2024051400293.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 51.0,
+  "buyback_hkd": 14800
  },
  {
   "q": "24Q2",
@@ -178,9 +178,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0814/2024081400282.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 103.7,
+  "buyback_hkd": 37500
  },
  {
   "q": "24Q3",
@@ -239,9 +239,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1113/2024111300327.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 94.9,
+  "buyback_hkd": 35900
  },
  {
   "q": "24Q4",
@@ -300,9 +300,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0319/2025031900336.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 57.6,
+  "buyback_hkd": 23800
  },
  {
   "q": "25Q1",
@@ -361,9 +361,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0514/2025051400273.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 43.0,
+  "buyback_hkd": 17100
  },
  {
   "q": "25Q2",
@@ -422,9 +422,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0813/2025081300261.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 38.9,
+  "buyback_hkd": 19400
  },
  {
   "q": "25Q3",
@@ -483,9 +483,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1113/2025111300286.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 35.4,
+  "buyback_hkd": 21100
  },
  {
   "q": "25Q4",
@@ -544,9 +544,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0318/2026031800388.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 36.2,
+  "buyback_hkd": 22400
  },
  {
   "q": "26Q1",
@@ -606,9 +606,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0513/2026051300334.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 12.7,
+  "buyback_hkd": 7600
  },
  {
   "q": "26Q2",
@@ -669,9 +669,9 @@
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0812/2026081200296.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-10-30T07:18:01+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 37.4,
+  "buyback_hkd": 16800
  },
  {
   "q": "26Q3",
@@ -707,10 +707,10 @@
   "fcf": -69100,
   "cfo": 2600,
   "capex_paid": 65100,
-  "fcf_ex_prepay": null,
+  "fcf_ex_prepay": 16900,
   "op_exai": 83300,
   "inv_listed_fv": 505400,
-  "op_exai_yoy_reported": null,
+  "op_exai_yoy_reported": 0.08,
   "game_dom_note": null,
   "inv_unlisted_bv": 397200,
   "borrow_nc": 291379.0,
@@ -727,12 +727,13 @@
    "fcf": "0.1bn",
    "cfo": "0.1bn",
    "capex_paid": "0.1bn",
+   "fcf_ex_prepay": "0.1bn",
    "op_exai": "0.1bn"
   },
   "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1118/2026111800448.pdf",
   "source_lang": "en",
-  "extracted_at": "2026-11-18T09:48:18+00:00",
-  "buyback_shares": null,
-  "buyback_hkd": null
+  "extracted_at": "2026-11-19T23:21:29+00:00",
+  "buyback_shares": 15.9,
+  "buyback_hkd": 7000
  }
 ]

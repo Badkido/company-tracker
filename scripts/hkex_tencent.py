@@ -186,10 +186,12 @@ def extract(doc_meta, text):
     for k, pat in [('fcf', r'(?:negative )?free cash flow (?:for the [\w ]+ )?(?:of|was|were) (?:RMB)?\s?(-?[\d.]+) billion'),
                    ('cfo', r'operating activities of RMB\s?([\d.]+) billion'),
                    ('capex_paid', r'(?:capital expenditure payments|payments for capital expenditures) of RMB\s?([\d.]+)\s*billion'),
-                   ('fcf_ex_prepay', r'Excluding the prepayments for compute procurement, our free cash flow would have been RMB\s?([\d.]+) billion')]:
+                   ('fcf_ex_prepay', r'Excluding the prepayments for compute procurement, our free cash flow would have been (?:(positive|negative) )?RMB\s?([\d.]+) billion')]:
         m = d.rx(pat)
-        v = bn(m)
+        v = bn(m, m.lastindex) if m else None  # 数字在最后一个捕获组
         if k == 'fcf' and m and re.search(r'negative free cash flow', m.group(0), re.I):
+            v = -abs(v)
+        if k == 'fcf_ex_prepay' and m and (m.group(1) or '').lower() == 'negative':
             v = -abs(v)
         r[k] = v
         if m:
@@ -200,8 +202,8 @@ def extract(doc_meta, text):
         prec['op_exai'] = '0.1bn'
     m = d.rx(r'fair value of our shareholdings\s*\d*\s*in listed investee companies[\s\S]{0,60}?RMB\s?([\d.,]+) billion')
     r['inv_listed_fv'] = bn(m)
-    m = d.rx(r'excluding new AI products\s*\d*\s*(?:contributions,?)?\s*(?:increased|rose|grew) by (\d+)% year-on-year')
-    r['op_exai_yoy_reported'] = int(m.group(1)) / 100 if m else None
+    m = d.rx(r'excluding new AI products\s*[’\']?\s*\d*\s*(?:contributions,?)?\s*(increased|rose|grew|declined|decreased|fell) by (\d+)% year-on-year')
+    r['op_exai_yoy_reported'] = (int(m.group(2)) / 100) * (-1 if m.group(1) in ('declined', 'decreased', 'fell') else 1) if m else None
     m = d.rx(r'Domestic Games revenues([\s\S]{0,700}?)International Games revenues')
     kw = m and re.search(r'deferr|Spring Festival|Lunar New Year|Chinese New Year|recognition', m.group(0), re.I)
     r['game_dom_note'] = ('…' + m.group(0)[max(0, kw.start() - 140):kw.start() + 100].strip() + '…') if kw else None
@@ -245,9 +247,10 @@ def settle_buyback(rows):
     by = {r['q']: r for r in rows}
     for r in rows:
         bb = r.pop('_bb', None)
-        r['buyback_shares'] = r['buyback_hkd'] = None
+        r.setdefault('buyback_shares', None)
+        r.setdefault('buyback_hkd', None)
         if not bb:
-            continue
+            continue  # 已存的旧季度不覆盖
         y, qq = r['q'][:2], int(r['q'][3])
         prior = [by.get(f'{y}Q{i}') for i in range(1, qq)]
         if bb['span'] in ('three',):
