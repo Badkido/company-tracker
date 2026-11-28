@@ -1,12 +1,12 @@
 [
  {
   "item": "snapshot",
-  "price_usd": 87.42,
-  "price_date": "2026-11-25",
-  "fx": 6.6627,
+  "price_usd": 88.43,
+  "price_date": "2026-11-27",
+  "fx": 6.6541,
   "ads_mn": 1473.5,
-  "net_cash_usd_bn": 75.3,
-  "restricted_usd_bn": 12.3,
+  "net_cash_usd_bn": 75.4,
+  "restricted_usd_bn": 12.4,
   "nopat_usd_bn": 11.4,
   "eps26e_rmb": 64.64,
   "employees_2024": 23465
